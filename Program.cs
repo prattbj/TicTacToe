@@ -46,6 +46,19 @@ public class ticTacToe
         return j == 9;
     }
 
+    //Changes the turn to the other player.
+    static char changeTurn(char turn) 
+    {
+        if (turn == 'x')
+        {
+            turn = 'o';
+        } else
+        {
+            turn = 'x';
+        }
+        return turn;
+    }
+
     //Main creates the character array, displays the output,
     //and does the turns.
     public static void Main(string[] args)
@@ -100,13 +113,8 @@ public class ticTacToe
             //at that location in the array to either an x or a y.
             squares[Int32.Parse(squareNumber) - 1] = turn; 
             //changes who's turn it is
-            if(turn == 'x')
-            {
-                turn = 'o';
-            } else 
-            {
-                turn = 'x';
-            }
+            turn = changeTurn(turn);
+
             //outputs the current board state
             Console.WriteLine();
             writeBoard(squares);
