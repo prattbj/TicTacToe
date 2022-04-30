@@ -1,1 +1,1 @@
-very nice very simple
+Simple Tic-Tac-Toe game. 

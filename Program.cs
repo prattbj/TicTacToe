@@ -121,10 +121,17 @@ namespace TicTacToe
                 Console.WriteLine();
                 writeBoard(squares);
             }
+            if (winningBoard(squares))
+            {
+                turn = changeTurn(turn);
 
-            //output that the game ended
-            Console.WriteLine("Good game. Thanks for playing!");
-            
+                //output that the game ended
+                Console.WriteLine($"{turn} wins!\nThanks for playing!");
+            }
+            else
+            {
+                Console.WriteLine("Game has ended in a draw. Thanks for playing!");
+            }
         }
     }
 }
